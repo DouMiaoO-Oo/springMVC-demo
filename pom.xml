@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.example</groupId>
+    <artifactId>springMVC-demo</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <modules>
+        <module>_01_quickstart</module>
+        <module>_02_bean_load</module>
+        <module>_03_request_mapping</module>
+        <module>_04_request_param</module>
+        <module>_05_response</module>
+        <module>_06_rest</module>
+        <module>_08_ssm</module>
+        <module>_09_result</module>
+    </modules>
+
+    <properties>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <!--
+                4.0及之前的servlet-api由Oracle官方维护，引入的依赖项是javax.servlet:javax.servlet-api
+                5.0及以后的servlet-api由Eclipse开源社区维护，引入的依赖项是jakarta.servlet:jakarta.servlet-api
+             -->
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <!-- 不设置 scope 默认是compile, 在部署的时候将会打包到lib目录下, 在编译、运行、测试时均有效;
+            test表示依赖项目仅仅参与测试相关的工作，在编译和运行环境下都不会被使用，更别说打包了;
+            runtime 仅仅适用于运行环境，在编译和测试环境下都不会被使用;
+            provided 代表的是该包只在编译和测试的时候用，运行的时候无效(例如直接使用tomcat中的), provided 不会被打包到lib目录下 -->
+            <scope>provided</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>5.3.30</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.16.0</version>
+        </dependency>
+
+
+        <!-- https://mvnrepository.com/artifact/junit/junit -->
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.13.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+
+    </build>
+</project>
